@@ -1,0 +1,160 @@
+html{
+	background: #d7a889;
+}
+body{
+	font-family: 'Helvetica';
+	font-size: 80%;
+	margin-bottom: 1.6cm;
+}
+body *{
+	margin: 0;
+	padding: 0;
+}
+strong{
+	color: red;
+	font-weight: bold;
+}
+
+.table{
+	border-spacing: 0;
+}
+.table tbody tr{
+	page-break-before: always;
+}
+.table td{
+	box-sizing: content-box;
+	padding: .3cm 0.1cm;
+	border-bottom: .02cm solid #CCCCCC;
+}
+.table thead td{
+	color: #64ac1e;
+	background-color: #fff;
+	padding: .1cm 0.1cm;
+	border-top: .03cm solid #CCCCCC;
+}
+.table td{
+	border-bottom: .02cm solid #CCCCCC;
+}
+.table .product-name{
+	width: 4cm;
+}
+.table .product-number{
+	width: .7cm;
+	color: #64ac1e;
+	text-align: center;
+}
+.table td.color-green{
+	color: #66AD1F;
+	background-color: transparent;
+}
+.table thead td.color-green{
+	color: #fff;
+	background-color: #66AD1F;
+}
+.table td.color-darkgreen{
+	color: #5A9424;
+	background-color: transparent;
+}
+.table thead td.color-darkgreen{
+	color: #fff;
+	background-color: #5A9424;
+}
+.table-slim .product-name{
+	width: 2.5cm;
+}
+.table-slim td {
+	word-wrap: break-word;
+}
+.grid-table{
+	display: table;
+}
+.grid-table .row{
+	display: table-row;
+}
+.grid-table .col{
+	display: table-cell;
+}
+
+/* Info Header */
+.info{
+	padding-top: 1cm;
+	padding-bottom: 1cm;
+	page-break-before: always;
+	border-top: .1cm solid #66AD1F;
+}
+.info:first-child{
+	page-break-before: auto;
+}
+.info .col{
+	width: 5.0cm;
+	padding-right: .2cm;
+	vertical-align: middle;
+	text-align: left;
+}
+.info h3{
+	font-size: 1.1em;
+	color: #666;
+	font-weight: bold;
+}
+.info span {
+	display: block;
+	padding-top: .2cm;
+	font-size: 1.0em;
+	color: #66AD1F;
+}
+.info .date {
+	text-align: center;
+}
+
+/*
+* HEADER
+ */
+.header{
+	position: fixed;
+	bottom: 1.2cm;
+	right: -1.5cm;
+	width: 7cm;
+
+	background-color: #66AD1F;
+}
+.header .logo{
+	padding: .4cm .3cm;
+}
+
+.ender{
+	page-break-before: always;
+}
+.ender h1{
+	font-size: 1.8em;
+	color: #66AD1F;
+	padding: 0.5cm 0;
+}
+.ender table{
+	width: 86%;
+	font-size: 1.2em;
+}
+.ender .table thead td {
+	color: #fff;
+	background-color: #64ac1e;
+	padding: .4cm 0.1cm;
+}
+.notes h2{
+	font-size: 1.5em;
+	color: #66AD1F;
+	padding: 0.7cm 0 .3cm;
+}
+.notes-content{
+	width: 83%;
+	border: 1px solid #ccc;
+	padding: .3cm;
+}
+
+/* test */
+footer{
+	position: fixed;
+	bottom: 0.2cm;
+	right: 0;
+}
+footer .pagenum:before {
+	content: counter(page);
+}

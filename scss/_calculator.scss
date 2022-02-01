@@ -1,0 +1,350 @@
+.page-template-template-calculator {
+  .entry-header .attachment-post-thumbnail,
+  .entry-header.entry-header-with-thumbnail {
+    height: 175px;
+    margin-bottom: 0;
+  }
+
+  #final_result h2 {
+    font-size: 0.875rem;
+    display: block;
+    color: black;
+    &:before {
+      border-top: 3px dotted rgba(100,172,30,0.5);
+      content: "";
+      display: block;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .container {
+    &.cal {
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+      padding: 1.5em 0;
+      &:after {
+        border-top: 3px dotted rgba(100, 172, 30, 0.5);
+        content: "";
+        display: block;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  #final_result {
+    h2 {
+      &:after {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  #calculator {
+    margin: 0 0 1.5rem;
+    form {
+      margin-top: 2em;
+      margin-bottom: 2em;
+      .container {
+        background: rgba(245, 245, 245, 0.68);
+        padding-top: 1.5em;;
+        padding-bottom: 1.5em;;
+      }
+      h3, .h3 {
+        color: #292929;
+        font-size: 0.8rem;
+        display: block;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        margin-bottom: 0;
+        & + strong {
+          float: left;
+          font-weight: 700;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          display: inline-block;
+          font-size: 1.0rem;
+          color: $color-green;
+          max-width: 85%;
+        }
+      }
+      select {
+        outline: none !important;
+        &:focus {
+          outline: none;
+        }
+      }
+      &#calculation-form {
+        margin-top: 3.5em;
+        margin-bottom: 3.5em;
+        .col {
+          width: 20%;
+          padding-left: 5px;
+          padding-right :5px;
+        }
+      }
+      &.section-buttons-spraying-plan {
+        padding: 0 7px;
+      }
+    }
+
+    a.add-row, a.add-row-modal {
+      color: #004995;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+
+    a.remove-calculation {
+      color: #C50021;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+    .SumoSelect > .optWrapper {
+      border-radius: 0;
+      &> .options > li.opt,
+      &> .options > li.opt:last-child {
+        border-radius: 0;
+        margin: 0;
+        padding: 7px;
+      }
+      label {
+        margin: 0;
+      }
+      span + label {
+        padding-left: 23px;
+      }
+    }
+    .SumoSelect.sumo_equipment > .optWrapper, 
+    .SumoSelect.sumo_farm > .optWrapper {
+      &> .options > li.opt:first-child {
+        display: none;
+      }
+    }
+    .row-cal-action {
+      margin: 1.5rem 0;
+    }
+    .row-cal-action a,
+    .btn {
+      border-radius: 0;
+      background: transparent;
+      color: $color-green;
+      border: 0;
+      text-transform: none;
+      box-shadow: none;
+      margin-top: 0.5rem;
+      font-size: 0.8125rem;
+      padding: 0 0 0 2rem;
+      transition: all 0.2s;
+      line-height: 1.6rem;
+      margin-right: 1rem;
+      &:before {
+        content: "k";
+        font-family: flaticon;
+        font-size: 1.6rem;
+        position: absolute;
+        margin-left: -2rem;
+      }
+      &:hover,
+      &:focus {
+        color: $color-blue;
+        text-decoration: none;
+      }
+      &.add-row {
+        display: none;
+      }
+      &.save-calculation {
+        color: $color-blue;
+      }
+      &.save-spraying-plan {
+        color: $color-blue;
+      }
+      &.update-spraying-plan {
+        color: $color-blue;
+      }
+      &.add-row-modal {
+        background: $color-green;
+        border:none;
+        color: white;
+        display: block;
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        transition: all 0.2s;
+        text-align: center;
+        width: 96.5%;
+        height: 2.25rem;
+
+        &:hover {
+          background: $color-blue;
+        }
+      }
+      &.remove-calculation {
+        color: #C50021;
+        &:before {
+          content: "l";
+        }
+        &:hover {
+          color: $color-blue;
+        }
+      }
+    }
+    .tripsy-delete-link {
+      background: transparent url('assets/images/delete.png') no-repeat center center;
+      height: 16px; width: 16px;
+      display: block;
+      transition: all 0.2s;
+      opacity: 0.65;
+      margin-top: 2px;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.section-buttons-spraying-plan {
+
+  .create-spraying-plan {
+    background: $color-blue;
+    border:none;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    transition: all 0.2s;
+    text-align: center;
+    width: 100%;
+    height: 2.25rem;
+
+    &:before {
+      content: "k";
+      font-family: flaticon;
+      font-size: 1.1rem;
+      position: absolute;
+      margin-left: -2rem;
+      margin-top: -0.1rem;
+    }
+
+    &:hover {
+      background: $color-green;
+      text-decoration: none;
+    }
+  }
+
+  .create-spraying-plan {
+    background: $color-green;
+
+    &:hover {
+      background: $color-blue;
+    }
+  }
+
+}
+
+.section-action-spraying-plan {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.section-spraying-list {
+  width: 100%;
+  background: #004995;
+  padding-bottom: 5px;
+  min-height: 75px;
+
+  @media all and (max-width: 767px) {
+    padding-top: 30px;
+  }
+
+  h3 {
+    color: $color-white;
+    margin: 25px 20px;
+    display: block;
+    float: left;
+    width: 100%;
+  }
+
+  .spraying-list, .responsive-table {
+
+    list-style: none;
+    word-break: normal;
+    word-wrap: normal;
+    padding-left: initial;
+
+    li {
+      padding: 10px 30px;
+      display: flex !important;
+      justify-content: space-between;
+      margin: 10px 15px;
+    }
+
+    .table-row {
+      background-color: #ffffff;
+      box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .t-col-1 {
+      flex-basis: 13%;
+      text-align: left;
+    }
+
+    .t-col-2 {
+      flex-basis: 30%;
+      text-align: left;
+    }
+
+    .t-col-3 {
+      flex-basis: 30%;
+      text-align: left;
+    }
+
+    .t-col-4 {
+      flex-basis: 22%;
+      text-align: right;
+    }
+
+    .v-divider {
+      border-left: 1px solid #E1E1E1;
+      display: inline-block;
+      height: 23px;
+      margin: 0 10px;
+    }
+    .open-spraying-link {
+      text-decoration-line: underline;
+    }
+    @media all and (max-width: 767px) {
+      .v-divider {
+        display: none;
+      }
+      li {
+        display: block !important;
+        margin: 10px 15px;
+      }
+      .t-col {
+        flex-basis: 100%;
+      }
+      .col {
+        display: flex !important;
+        padding: 10px 0;
+
+        &:before {
+          color: #6C7A89;
+          padding-right: 10px;
+          content: attr(data-label);
+          flex-basis: 50%;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+

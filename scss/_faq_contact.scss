@@ -1,0 +1,98 @@
+.faq {
+  border: 1px solid #64AC1E;
+}
+
+.faq + .faq {
+  border-top: 0;
+}
+
+.faq + :not(.faq) {
+  margin-top: 40px;
+}
+
+:not(.faq) + .faq {
+  margin-top: 20px;
+}
+
+.faq-answer {
+  display: none;
+}
+
+.faq-question {
+  display: block;
+  padding: 15px 20px;
+  line-height: 1.5rem;
+  color: #292929;
+  strong {
+    display: block;
+    padding-left: 20px;
+  }
+  strong::before {
+    font-family: "flaticon" !important;
+    content: 'h';
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    color: #64AC1E;
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 3px;
+  }
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background: #64AC1E;
+    strong::before {
+      color: white;
+    }
+  }
+  &:focus strong::before {
+    content: 'g';
+  }
+}
+
+.faq-question:focus + .faq-answer {
+  display: inline-block;
+}
+
+.faq-answer  {
+  padding: 15px 20px 15px 40px;
+  background: #004995;
+  color: white;
+  width: 100%;
+}
+
+
+@media (min-width: 600px) {
+  .wp-block-columns {
+    flex-wrap: nowrap;
+  }
+}
+
+.contact {
+  .contact-name {
+    color: #64AC1E;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+  .contact-desc {
+    color: #64AC1E;
+    font-weight: bold;
+    height: 1em;
+    margin-bottom: 1.5em;
+  }
+  .contact-row {
+    line-height: 2rem;
+    i {
+      display: inline-block;
+      width: 1rem;
+      text-align: center;
+    }
+  }
+}

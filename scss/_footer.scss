@@ -1,0 +1,29 @@
+/* -- FOOTER -- */
+footer.site-footer {
+    position: absolute;
+    right: 0;
+    bottom: -100px;
+    @media(min-width: 576px) {
+      bottom: -60px;
+    }
+    left: 0;
+    font-size: 12px;
+    z-index: 5;
+}
+.um-page-login footer.site-footer {
+  position: fixed;
+  bottom: 0;
+}
+
+footer.site-footer .site-info {
+    padding: 10px 0;
+}
+
+footer.site-footer .row {
+  line-height: 40px;
+}
+
+footer.site-footer .site-logo-div {
+    width: 80px;
+    display: inline-block;
+}

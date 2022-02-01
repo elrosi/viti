@@ -1,0 +1,349 @@
+/* -- PAGE STYLE -- */
+html, body {
+  height: auto;
+}
+
+body, button, input, select, textarea {
+  color: #292929;
+  font-size: 13px;
+}
+
+p, strong {
+  font-size: 13px;
+}
+
+h1, h2, h3, h4 {
+  color: #64AC1E;
+}
+
+h1.app-title {
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  h1.app-title {
+    text-align: center;
+  }
+}
+
+.section-padding {
+  padding: unset;
+}
+
+.entry-content li {
+  margin-left: 0;
+}
+
+.site-content {
+  border: 0;
+  margin: auto;
+}
+
+#primary {
+  margin: 0;
+  padding: 0;
+}
+
+#content-inside {
+  position: static;
+}
+
+.site-header {
+  box-shadow: none;
+  height: 80px;
+}
+
+/* disable tooltip */
+.tipsy-n {
+  display: none !important;
+}
+
+/* content height min. na celu obrazovku */
+#page {
+  min-height: calc(100vh - 100px);
+  margin-bottom: 100px;
+}
+
+.admin-bar #page {
+  min-height: calc(100vh - 146px);
+  margin-bottom: 100px;
+}
+
+@media (min-width: 576px) {
+  #page {
+    min-height: calc(100vh - 60px);
+    margin-bottom: 60px;
+  }
+  .admin-bar #page {
+    min-height: calc(100vh - 92px);
+    margin-bottom: 60px;
+  }
+}
+
+/* font */
+body, button, input, select, textarea {
+  font-family: Arial, sans-serif;
+}
+
+
+/* BLANK TEMPLATE */
+
+.page-template-template-blankpage {
+  #page {
+    margin-bottom: 0 !important;
+  }
+}
+
+
+
+/* -- HEADER MAIN MENU */
+@media (min-width: 1140px) {
+  #site-navigation {
+    display: none;
+  }
+}
+
+#nav-toggle {
+  margin-top: 20px;
+}
+
+#nav-toggle.nav-is-visible span:before, #nav-toggle.nav-is-visible span:after,
+#nav-toggle span, #nav-toggle span::after, #nav-toggle span::before {
+  background: white;
+}
+
+.onepress-menu-xl {
+    display: none;
+    float: left;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+@media (min-width: 1140px) {
+  .onepress-menu-xl {
+    display: block;
+  }
+}
+
+.onepress-menu-xl > li {
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.onepress-menu > li::before,
+.onepress-menu-xl > li::before {
+  position: absolute;
+  color: #64AC1E;
+  margin-left: 0;
+  font-size: 1.3rem;
+  margin-top: 0;
+  pointer-events: none;
+  transition: all 0.2s;
+}
+
+.onepress-menu > li::before {
+  margin-top: 0.8rem;
+  margin-left: 20px;
+  font-size: 1.5rem;
+}
+
+.onepress-menu > li.flaticon a {
+  padding-left: 55px;
+}
+
+.onepress-menu > li:first-child::before {
+  margin-top: 0.7rem;
+}
+
+.onepress-menu-xl a {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: none;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  padding-right: 2.5rem;
+  transition: all 0.2s;
+}
+
+#site-navigation-xl .onepress-menu-xl .flaticon a:first-child {
+  padding-left: 1.8rem;
+}
+
+#site-navigation-xl2 .onepress-menu-xl {
+  float: right;
+}
+
+#site-navigation-xl2 .onepress-menu-xl a {
+  padding-right: 0;
+  padding-left: 4rem;
+}
+
+#site-navigation-xl2 .onepress-menu-xl > li::before {
+  margin-left: 2.5rem;
+  margin-top: 0.1rem;
+
+}
+
+.onepress-menu-xl .current-menu-item a,
+.onepress-menu-xl .current-menu-item::before,
+.onepress-menu-xl a:hover {
+  color: #004995;
+  text-decoration: none;
+}
+
+.onepress-menu-xl .current-menu-item li::before,
+.onepress-menu-xl li:hover:before {
+  color: #004995;
+}
+
+
+/* post thumbnail */
+.entry-header {
+  margin-bottom: 2rem;
+}
+
+.entry-header.entry-header-with-thumbnail {
+  height: 355px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.entry-header .attachment-post-thumbnail {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 355px;
+  object-fit: cover;
+  top: 151px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.entry-header .entry-title,
+.entry-header .entry-subtitle {
+  position: relative;
+  color: #64AC1E;
+  font-weight: bold;
+  margin: 0;
+}
+
+.entry-header .entry-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+}
+
+.entry-header.entry-header-with-thumbnail .entry-title,
+.entry-header.entry-header-with-thumbnail .entry-subtitle {
+  color: white;
+}
+
+.entry-header .entry-title:last-child,
+.entry-header .entry-subtitle:last-child {
+  margin-bottom: 20px;
+}
+
+
+/* UL */
+
+#main .basf_product ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#main .basf_product ul li {
+  display: block;
+  padding-left: 20px;
+  &:before {
+    font-family: "flaticon" !important;
+    content: 'h';
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    color: #64AC1E;
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 3px;
+  }
+}
+
+#recommended_products {
+
+  .list-recommended-products {
+    display: grid;
+    grid-template-columns: 33.2% 33.2% 33.2%;
+    padding: 0;
+
+    .recommended-product {
+      border: 1px solid #e1e1e1;
+      height: 53px;
+      display: inline-block;
+      margin: 0 15px 15px 0;
+
+      .products-image-wrapper {
+        float: left;
+        display: inline-block;
+        width: 51px;
+      }
+
+      .products-content-wrapper {
+        float: left;
+        width: calc(100% - 51px);
+        position: relative;
+        height: 100%;
+      }
+
+      .recommended-products {
+
+        &-image {
+          width: 51px;
+          height: 51px;
+        }
+
+        &-title {
+          color: #FFFFFF;
+          display: block;
+          float: left;
+          font-size: 12px;
+          line-height: 16px;
+          margin-left: 10px;
+          margin-bottom: 5px;
+          margin-top: 6px;
+          font-weight: bold;
+        }
+
+        &-description {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          color: #FFFFFF;
+          display: block;
+          float: left;
+          font-size: 8px;
+          line-height: 11px;
+          margin-left: 10px;
+          white-space: nowrap;
+          margin-top: 5px;
+          width: 87%;
+        }
+
+      }
+    }
+  }
+}
+
+.acf-field {
+  .acf-notice.-error {
+    background: #f55e4f !important;
+    color: #ffffff !important;
+  }
+}
+

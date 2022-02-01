@@ -1,0 +1,130 @@
+.post-type-archive-basf_product{
+  .page-header{
+	padding: 40px 0px;
+	border-top: 0 none;
+	background: transparent;
+	border-bottom: 0 none;
+	.page-title{
+	  font-weight: 700;
+	  font-size: 34px;
+	}
+  }
+  .basf_product{
+	margin-bottom: 2.5rem;
+	.entry-header{
+	  margin-bottom: 5rem;
+	  a{
+		&:hover{
+		  text-decoration: none;
+		}
+	  }
+	  .product-title{
+		font-size: 16px;
+		margin-top: 12px;
+		margin-bottom: 2px;
+	  }
+	}
+	.product-image{
+	  img{
+		width: 100%;
+		height: auto;
+	  }
+	}
+	.product-category{
+	  font-size: 12px;
+	}
+	.btn-more{
+	  padding: 10px 16px;
+	  color: #fff;
+	  background: $color-blue;
+	  font-size: 12px;
+	  position: absolute;
+	  bottom: 2rem;
+    transition: all 0.2s;
+	  &:hover,
+    &:focus {
+		  background: $color-green;
+		  text-decoration: none;
+	  }
+	}
+  }
+}
+/*
+* Post navigation
+ */
+.posts-navigation{
+  width: 100%;
+  .screen-reader-text{
+	display: none;
+  }
+}
+.nav-links{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: center;
+  .nav-previous,
+  .nav-next{
+	display: inline-block;
+	margin: 0 4px;
+	float: none;
+	a{
+	  display: inline-block;
+	  padding: 15px 19px;
+	  color: $color-green;
+	  border: 1px solid $color-green;
+	  background: transparent;
+	  &:hover{
+		color: #fff;
+		background: $color-blue;
+		border: 1px solid $color-blue;
+	  }
+	}
+  }
+}
+/*
+* Search
+ */
+.search-results .hentry{
+  border-bottom: 0 none;
+  padding-bottom: 0px;
+}
+#searchform {
+  margin-bottom: 30px;
+  .field{
+	border: 1px solid #d4d4d4;
+	background-color: #fff;
+	box-shadow: none;
+	padding: 8px 14px;
+	min-width: 230px;
+  }
+  .submit{
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	text-indent: -999px;
+	overflow: hidden;
+	background: url(assets/images/icon-search.svg) no-repeat $color-green 42% 50%;
+	background-size: 15px;
+	margin-left: -35px;
+	padding: 0px;
+	border: 0 none !important;
+	&:hover{
+	  background: $color-blue url(assets/images/icon-search.svg) no-repeat 42% 50% !important;
+    background-size: 15px !important;
+	}
+  }
+}
+@media screen and (min-width: $screen-lg ) {
+  #searchform {
+	position: absolute;
+	right: 15px;
+	top: -86px;
+	font-size: 0;
+	margin-bottom: 0px;
+	  white-space: nowrap;
+  }
+}

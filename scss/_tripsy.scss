@@ -1,0 +1,3000 @@
+/*
+ * easy-autocomplete
+ * jQuery plugin for autocompletion
+ *
+ * @author Łukasz Pawełczak (http://github.com/pawelczak)
+ * @version 1.3.5
+ * Copyright  License:
+ */
+
+.easy-autocomplete a {
+  display: block;
+}
+
+.easy-autocomplete.eac-blue-light input:hover,
+.easy-autocomplete.eac-blue-light input:focus {
+  border-color: #66afe9;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.easy-autocomplete.eac-blue-light ul {
+  border-color: #66afe9;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.easy-autocomplete.eac-blue-light ul li,
+.easy-autocomplete.eac-blue-light ul .eac-category {
+  border-color: #66afe9;
+}
+
+.easy-autocomplete.eac-blue-light ul li.selected,
+.easy-autocomplete.eac-blue-light ul .eac-category.selected {
+  background-color: #ecf5fc;
+}
+
+.easy-autocomplete.eac-green-light input:hover,
+.easy-autocomplete.eac-green-light input:focus {
+  border-color: #41DB00;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(146, 237, 107, 0.6);
+}
+
+.easy-autocomplete.eac-green-light ul {
+  border-color: #41DB00;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(146, 237, 107, 0.6);
+}
+
+.easy-autocomplete.eac-green-light ul li,
+.easy-autocomplete.eac-green-light ul .eac-category {
+  border-color: #41DB00;
+}
+
+.easy-autocomplete.eac-green-light ul li.selected,
+.easy-autocomplete.eac-green-light ul .eac-category.selected {
+  background-color: #9eff75;
+}
+
+.easy-autocomplete.eac-red-light input:hover,
+.easy-autocomplete.eac-red-light input:focus {
+  border-color: #ff5b5b;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 90, 90, 0.6);
+}
+
+.easy-autocomplete.eac-red-light ul {
+  border-color: #ff5b5b;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 90, 90, 0.6);
+}
+
+.easy-autocomplete.eac-red-light ul li,
+.easy-autocomplete.eac-red-light ul .eac-category {
+  border-color: #ff5b5b;
+}
+
+.easy-autocomplete.eac-red-light ul li.selected,
+.easy-autocomplete.eac-red-light ul .eac-category.selected {
+  background-color: #ff8e8e;
+}
+
+.easy-autocomplete.eac-yellow-light input:hover,
+.easy-autocomplete.eac-yellow-light input:focus {
+  border-color: #ffdb00;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 231, 84, 0.6);
+}
+
+.easy-autocomplete.eac-yellow-light ul {
+  border-color: #ffdb00;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 231, 84, 0.6);
+}
+
+.easy-autocomplete.eac-yellow-light ul li,
+.easy-autocomplete.eac-yellow-light ul .eac-category {
+  border-color: #ffdb00;
+}
+
+.easy-autocomplete.eac-yellow-light ul li.selected,
+.easy-autocomplete.eac-yellow-light ul .eac-category.selected {
+  background-color: #ffe233;
+}
+
+.easy-autocomplete.eac-dark-light input:hover,
+.easy-autocomplete.eac-dark-light input:focus {
+  border-color: #333;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(55, 55, 55, 0.6);
+}
+
+.easy-autocomplete.eac-dark-light ul {
+  border-color: #333;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(55, 55, 55, 0.6);
+}
+
+.easy-autocomplete.eac-dark-light ul li,
+.easy-autocomplete.eac-dark-light ul .eac-category {
+  border-color: #333;
+}
+
+.easy-autocomplete.eac-dark-light ul li.selected,
+.easy-autocomplete.eac-dark-light ul .eac-category.selected {
+  background-color: #4d4d4d;
+  color: #fff;
+}
+
+.easy-autocomplete.eac-dark {
+  color: #fff;
+}
+
+.easy-autocomplete.eac-dark input {
+  background-color: #404040;
+  border-radius: 4px;
+  box-shadow: none;
+  color: #f6f6f6;
+}
+
+.easy-autocomplete.eac-dark input:hover,
+.easy-autocomplete.eac-dark input:focus {
+  border-color: #333;
+  box-shadow: none;
+}
+
+.easy-autocomplete.eac-dark ul {
+  border-color: #333;
+}
+
+.easy-autocomplete.eac-dark ul li,
+.easy-autocomplete.eac-dark ul .eac-category {
+  background-color: #404040;
+  border-color: #333;
+}
+
+.easy-autocomplete.eac-dark ul li.selected,
+.easy-autocomplete.eac-dark ul .eac-category.selected {
+  background-color: #737373;
+  color: #f6f6f6;
+}
+
+.easy-autocomplete.eac-dark-glass {
+  color: #fff;
+}
+
+.easy-autocomplete.eac-dark-glass input {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  box-shadow: none;
+  color: #f6f6f6;
+}
+
+.easy-autocomplete.eac-dark-glass input:hover,
+.easy-autocomplete.eac-dark-glass input:focus {
+  border-color: rgba(0, 0, 0, 0.8);
+  box-shadow: none;
+}
+
+.easy-autocomplete.eac-dark-glass ul {
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
+.easy-autocomplete.eac-dark-glass ul li,
+.easy-autocomplete.eac-dark-glass ul .eac-category {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
+.easy-autocomplete.eac-dark-glass ul li.selected,
+.easy-autocomplete.eac-dark-glass ul .eac-category.selected {
+  background-color: rgba(64, 64, 64, 0.8);
+  color: #f6f6f6;
+}
+
+.easy-autocomplete.eac-dark-glass ul li:last-child,
+.easy-autocomplete.eac-dark-glass ul .eac-category:last-child {
+  border-radius: 0 0 4px 4px;
+}
+
+.easy-autocomplete.eac-blue {
+  color: #fff;
+}
+
+.easy-autocomplete.eac-blue input {
+  background-color: #6d9ed1;
+  border-radius: 4px;
+  box-shadow: none;
+  color: #f6f6f6;
+}
+
+.easy-autocomplete.eac-blue input::-webkit-input-placeholder {
+  color: #f6f6f6;
+}
+
+.easy-autocomplete.eac-blue input:-moz-placeholder {
+  color: #f6f6f6;
+}
+
+.easy-autocomplete.eac-blue input::-moz-placeholder {
+  color: #f6f6f6;
+}
+
+.easy-autocomplete.eac-blue input:-ms-input-placeholder {
+  color: #f6f6f6;
+}
+
+.easy-autocomplete.eac-blue input:hover,
+.easy-autocomplete.eac-blue input:focus {
+  border-color: #5A91CB;
+  box-shadow: none;
+}
+
+.easy-autocomplete.eac-blue ul {
+  border-color: #5A91CB;
+}
+
+.easy-autocomplete.eac-blue ul li, .easy-autocomplete.eac-blue ul .eac-category {
+  background-color: #6d9ed1;
+  border-color: #5A91CB;
+}
+
+.easy-autocomplete.eac-blue ul li.selected, .easy-autocomplete.eac-blue ul .eac-category.selected {
+  background-color: #94b8dd;
+  color: #f6f6f6;
+}
+
+.easy-autocomplete.eac-yellow {
+  color: #333;
+}
+
+.easy-autocomplete.eac-yellow input {
+  background-color: #ffdb7e;
+  border-color: #333;
+  border-radius: 4px;
+  box-shadow: none;
+  color: #333;
+}
+
+.easy-autocomplete.eac-yellow input:hover, .easy-autocomplete.eac-yellow input:focus {
+  border-color: #333;
+  box-shadow: none;
+}
+
+.easy-autocomplete.eac-yellow ul {
+  border-color: #333;
+}
+
+.easy-autocomplete.eac-yellow ul li, .easy-autocomplete.eac-yellow ul .eac-category {
+  background-color: #ffdb7e;
+  border-color: #333;
+}
+
+.easy-autocomplete.eac-yellow ul li.selected, .easy-autocomplete.eac-yellow ul .eac-category.selected {
+  background-color: #ffe9b1;
+  color: #333;
+}
+
+.easy-autocomplete.eac-purple {
+  color: #333;
+}
+
+.easy-autocomplete.eac-purple input {
+  background-color: #d6d1e7;
+  border-color: #b8afd5;
+  box-shadow: none;
+  color: #333;
+}
+
+.easy-autocomplete.eac-purple input:hover, .easy-autocomplete.eac-purple input:focus {
+  border-color: #333;
+  box-shadow: none;
+}
+
+.easy-autocomplete.eac-purple ul {
+  border-color: #333;
+}
+
+.easy-autocomplete.eac-purple ul li, .easy-autocomplete.eac-purple ul .eac-category {
+  background-color: #d6d1e7;
+  border-color: #333;
+}
+
+.easy-autocomplete.eac-purple ul li.selected, .easy-autocomplete.eac-purple ul .eac-category.selected {
+  background-color: #ebe8f3;
+  color: #333;
+}
+
+.easy-autocomplete.eac-bootstrap input {
+  border-color: #ccc;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  color: #555;
+  padding: 6px 12px;
+}
+
+.easy-autocomplete-container {
+  position: absolute;
+  width: 195px;
+  margin-top: 1px;
+  z-index: 2000;
+}
+
+.easy-autocomplete-container ul {
+  background: none repeat scroll 0 0 #ffffff;
+  border-top: 1px solid #ccc;
+  display: none;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  position: relative;
+  top: -1px;
+}
+
+.easy-autocomplete-container ul li, .easy-autocomplete-container ul .eac-category {
+  background: inherit;
+  border-color: #ccc;
+  border-image: none;
+  border-style: solid;
+  border-width: 0 1px;
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 6px 12px;
+  margin: 0;
+}
+
+.easy-autocomplete-container ul li:last-child {
+  border-radius: 0 0 2px 2px;
+  border-width: 0 1px 1px;
+}
+
+.easy-autocomplete-container ul li.selected {
+  background: none repeat scroll 0 0 #ebebeb;
+  cursor: pointer;
+}
+
+.easy-autocomplete-container ul li.selected div {
+  font-weight: normal;
+}
+
+.easy-autocomplete-container ul li div {
+  display: block;
+  font-weight: normal;
+  word-break: break-all;
+}
+
+.easy-autocomplete-container ul li b {
+  font-weight: bold;
+}
+
+.easy-autocomplete-container ul .eac-category {
+  color: #aaa;
+  font-style: italic;
+}
+
+.eac-description .eac-item span {
+  color: #aaa;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.eac-icon-left .eac-item img {
+  margin-right: 4px;
+  max-height: 30px;
+}
+
+.eac-icon-right .eac-item {
+  margin-top: 8px;
+  min-height: 24px;
+  position: relative;
+}
+
+.eac-icon-right .eac-item img {
+  margin-left: 4px;
+  max-height: 30px;
+  position: absolute;
+  right: -4px;
+  top: -8px;
+}
+
+/**
+ * (c) 2013 Jcalendar Plugin | Bossanova UI
+ * http://www.github.com/paulhodel/jcalendar
+ *
+ * @author: Paul Hodel <paul.hodel@gmail.com>
+ * @description: Date/Datetime jquery Plugin
+ */
+
+.jcalendar {
+  position: absolute;
+  left: -200px;
+  top: -200px;
+  z-index: 999;
+  box-sizing: border-box;
+  display: none;
+}
+
+.jcalendar_container
+{
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.39);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.39);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.39);
+}
+
+.jcalendar thead td {
+  padding: 12px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#258dc8+0,258dc8+100;Blue+Flat+%231 */
+  background: $color-blue; /* Old browsers */
+  color: #fff;
+  border: 0;
+}
+
+.jcalendar thead span {
+  cursor: pointer;
+}
+
+.jcalendar tbody td {
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #fff;
+  color: #000;
+  font-size: 12px;
+  border: 0;
+}
+
+.jcalendar tfoot td {
+  padding: 10px;
+}
+
+#jcalendar_weekdays td {
+  font-weight: bold;
+  background-color: #f8f8f8;
+  padding: 14px;
+}
+
+.jcalendar tbody u {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.jcalendar_close {
+  cursor: pointer;
+}
+
+.jcalendar_months td, .jcalendar_years td {
+  height: 30px;
+}
+
+.jcalendar table {
+  width: 100%;
+  background-color: #fff;
+}
+
+.jcalendar_icon {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background-image: url('img/calendar.png');
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 2px;
+  left: -17px;
+}
+
+.jcalendar_input {
+  padding-right: 18px;
+}
+
+.jcalendar_icon_up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+}
+
+.jcalendar_down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #fff;
+}
+
+.jcalendar_left {
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-right: 4px solid #fff;
+}
+
+.jcalendar_right {
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid #fff;
+}
+
+.jcalendar_hour, .jcalendar_min, .jcalendar_confirm {
+  width: 50px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px;
+  text-align: center;
+}
+
+.jcalendar_min {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.jcalendar_confirm {
+  background-color: #eee;
+}
+
+.jcalendar_centralized {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.jcalendar_centralized .jcalendar_container {
+  position: absolute;
+  z-index: 999;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+}
+
+.jcalendar_reset {
+  float: right;
+  padding-right: 5px;
+}
+
+.jcalendar_prev, .jcalendar_next {
+  cursor: pointer;
+}
+
+/**
+ * (c) 2013 jDropdown
+ * http://www.github.com/paulhodel/jdropdown
+ *
+ * @author: Paul Hodel <paul.hodel@gmail.com>
+ * @description: Custom dropdowns
+ */
+
+.jdropdown {
+  display: inline;
+  cursor: pointer;
+}
+
+.jdropdown-header {
+  border: 1px solid #ccc;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 40%;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSdibGFjaycgaGVpZ2h0PScyNCcgdmlld0JveD0nMCAwIDI0IDI0JyB3aWR0aD0nMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZD0nTTcgMTBsNSA1IDUtNXonLz48cGF0aCBkPSdNMCAwaDI0djI0SDB6JyBmaWxsPSdub25lJy8+PC9zdmc+);
+  width: inherit;
+  text-overflow: ellipsis;
+  display: block;
+  cursor: pointer;
+}
+
+.jdropdown-content {
+  min-width: inherit;
+  min-height: 10px;
+  border: 1px solid #8fb1e3;
+  margin: 0px;
+  display: none;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.jdropdown-focus .jdropdown-content {
+  position: absolute;
+  display: inline-block;
+  max-height: 200px;
+  overflow-y: scroll;
+  z-index: 1000;
+}
+
+.jdropdown-focus .jdropdown-header {
+  outline: auto 5px -webkit-focus-ring-color;
+}
+
+.jdropdown-item {
+  padding: 4px;
+  padding-left: 8px;
+  white-space: nowrap;
+}
+
+.jdropdown-item:hover {
+  background-color: #1f93ff;
+  color: #fff;
+}
+
+.jdropdown-item.jdropdown-selected {
+  background-color: #1f93ff;
+  color: #fff;
+}
+
+.jdropdown-item.jdropdown-selected:after {
+  font-family: 'Material Icons';
+  content: 'check';
+  float: right;
+}
+
+/**
+ * (c) 2013 Jexcel Plugin | Bossanova UI
+ * http://www.github.com/paulhodel/jexcel
+ *
+ * @author: Paul Hodel <paul.hodel@gmail.com>
+ * @description: Web spreadsheet
+ */
+
+.jexcel {
+  border-collapse: separate;
+  table-layout: fixed;
+  white-space: nowrap;
+  empty-cells: show;
+  border-top: 0;
+  border-left: 1px solid #ccc;
+  border-right: 0;
+  border-bottom: 0;
+  background-clip: padding-box;
+  background-color: #fff;
+}
+
+@media all and (-ms-high-contrast: none) {
+  .jexcel {
+    width: 0;
+  }
+}
+
+@media screen \9
+{
+  .jexcel {
+    width: 0;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .jexcel {
+    width: 0;
+  }
+}
+
+.jexcel > thead > tr, .jexcel > tbody > tr {
+  display: flex;
+}
+
+.jexcel > thead > tr > td {
+  border-left: 0;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-bottom: 0;
+  background-color: #f3f3f3;
+  padding: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.jexcel > thead > tr > td.selected {
+  background-color: #dcdcdc;
+}
+
+.jexcel > tbody {
+  padding-right: 3px;
+  padding-bottom: 1px;
+}
+
+.jexcel > tbody > tr > td.edition {
+  padding: 0;
+}
+
+.jexcel > tbody > tr > td:first-child {
+  background-color: #f3f3f3;
+  width: 30px;
+  text-align: center;
+}
+
+.jexcel > tbody > tr > td {
+  border-left: 0;
+  border-right: 1px solid #ccc;
+  border-top: 0;
+  border-bottom: 1px solid #ccc;
+  padding: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.jexcel > thead > tr > td:last-child,
+.jexcel > tbody > tr > td:last-child,
+.jexcel > tbody > tr:first-child > td:last-child {
+  border: 0;
+}
+
+.jexcel > tbody > tr:first-child > td {
+  border-top: 1px solid #ccc;
+}
+
+.jexcel > tbody > tr > td > img {
+  display: block;
+}
+
+.jexcel > tbody > tr > td.readonly {
+  color: rgba(0, 0, 0, 0.3)
+}
+
+.jexcel > tbody > tr.selected > td:first-child {
+  /*background-color: #dcdcdc;*/
+}
+
+.jexcel .highlight {
+  background-color: rgba(202, 206, 206, 0.09);
+  color: rgb(117, 117, 117);
+}
+
+.jexcel .highlight-top {
+  /*border-top: 1px solid #000 !important;*/
+}
+
+.jexcel .highlight-left {
+  /*border-left: 1px solid #000;*/
+}
+
+.jexcel .highlight-right {
+  /*border-right: 1px solid #000;*/
+  /*box-shadow: 1px 0px #ccc;*/
+  /*-webkit-box-shadow: 1px 0px #ccc;*/
+  /*-moz-box-shadow: 1px 0px #ccc;*/
+}
+
+.jexcel .highlight-bottom {
+  /*border-bottom: 1px solid #000;*/
+  /*box-shadow: 0px 1px #ccc;*/
+  /*-webkit-box-shadow: 0px 1px #ccc;*/
+  /*-moz-box-shadow: 0px 1px #ccc;*/
+}
+
+.jexcel .highlight-bottom.highlight-right {
+  /*border-bottom: 1px solid #000;*/
+  /*box-shadow: 1px 1px #ccc;*/
+  /*-webkit-box-shadow: 1px 1px #ccc;*/
+  /*-moz-box-shadow: 1px 1px #ccc;*/
+}
+
+.jexcel .selection {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.jexcel .selection-left {
+  border-left: 1px dotted #000;
+}
+
+.jexcel .selection-right {
+  border-right: 1px dotted #000;
+}
+
+.jexcel .selection-top {
+  border-top: 1px dotted #000;
+}
+
+.jexcel .selection-bottom {
+  border-bottom: 1px dotted #000;
+}
+
+.jexcel_corner {
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  height: 5px;
+  width: 5px;
+  border: 2px solid rgb(255, 255, 255);
+  top: -200px;
+  left: -200px;
+  cursor: crosshair;
+  box-sizing: initial;
+  z-index: 1;
+}
+
+.jexcel .editor {
+  outline: 0 solid transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
+  padding: 0;
+}
+
+.jexcel > tbody > tr > td > select,
+.jexcel > tbody > tr > td > input,
+.jexcel > tbody > tr > td > textarea {
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.jexcel > tbody > tr > td > textarea {
+  resize: none;
+  padding-top: 6px !important;
+}
+
+.jexcel > tbody > tr > td > input[type=checkbox] {
+  width: 12px;
+  margin-top: 2px;
+}
+
+.jexcel > tbody > tr > td > select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 40%;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSdibGFjaycgaGVpZ2h0PScyNCcgdmlld0JveD0nMCAwIDI0IDI0JyB3aWR0aD0nMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZD0nTTcgMTBsNSA1IDUtNXonLz48cGF0aCBkPSdNMCAwaDI0djI0SDB6JyBmaWxsPSdub25lJy8+PC9zdmc+);
+}
+
+.jexcel, .jexcel td, .jexcel_corner {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.jexcel_textarea {
+  position: absolute;
+  top: -999px;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+}
+
+.jexcel .results {
+  position: absolute;
+  min-height: 200px;
+  max-height: 300px;
+  width: 220px;
+  background-color: #fff;
+  overflow-y: scroll;
+  z-index: 99;
+  text-align: left;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  margin-left: -5px;
+}
+
+.jexcel .results li {
+  list-style: none;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.jexcel .results li:hover, .jexcel .results li.selected {
+  background-color: #1e90ff;
+  color: #ffffff;
+}
+
+.jexcel .dragline {
+  position: absolute;
+}
+
+.jexcel .dragline div {
+  position: relative;
+  top: -6px;
+  height: 5px;
+  width: 22px;
+}
+
+.jexcel .dragline div:hover {
+  cursor: move;
+}
+
+.jexcel .onDrag {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.jexcel .error {
+  border: 1px solid red;
+}
+
+.jexcel .arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #444;
+  position: absolute;
+  margin-left: 4px;
+  margin-top: 8px;
+}
+
+.jexcel .arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #444;
+  position: absolute;
+  margin-left: 4px;
+  margin-top: 8px;
+}
+
+.jexcel .resizing {
+  border-right-style: dotted !important;
+  border-right-color: black !important;
+}
+
+.jexcel_contextmenu {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  background: #fff;
+  color: #555;
+  font-family: sans-serif;
+  font-size: 11px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(143, 144, 145, 1);
+  -moz-box-shadow: 2px 2px 2px 0 rgba(143, 144, 145, 1);
+  box-shadow: 2px 2px 2px 0 rgba(143, 144, 145, 1);
+  padding: 5px 0 0 0;
+  border: 1px solid #C6C6C6;
+}
+
+.jexcel_contextmenu a {
+  display: block;
+  color: #555;
+  text-decoration: none;
+  padding: 6px 8px 6px 30px;
+  width: 250px;
+  position: relative;
+  cursor: default;
+}
+
+.jexcel_contextmenu a span {
+  color: #a1a192;
+  float: right;
+  margin-right: 10px;
+}
+
+.jexcel_contextmenu a:hover {
+  background: #ebebeb;
+}
+
+.jexcel_contextmenu hr {
+  border: 1px solid #e9e9e9;
+  border-bottom: 0;
+}
+
+.jexcel .jexcel_arrow {
+  float: right;
+  position: relative;
+  top: 8px;
+  left: -13px;
+}
+
+.jexcel #jexcel_arrow {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #bbb;
+  position: absolute;
+  cursor: pointer;
+}
+
+
+.jexcel > tbody::-webkit-scrollbar {
+  margin-left: 6px;
+  width: 6px;
+}
+
+.jexcel > tbody::-webkit-scrollbar-track {
+  background: #f3f3f3;
+}
+
+.jexcel > tbody::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.jexcel > tbody::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/**
+ * (c) 2013 Jexcel Plugin | Bossanova UI
+ * http://www.github.com/paulhodel/jexcel
+ *
+ * @author: Paul Hodel <paul.hodel@gmail.com>
+ * @description: Web spreadsheet
+ */
+
+#calculation-form .row {
+  display: flex;
+  align-items: flex-end;
+}
+
+#calculation-form .form-group {
+  height: 80px;
+}
+
+#calculation-form .form-group > label {
+  height: 40px;
+  float: left;
+  width: 100%;
+}
+
+.jexcel {
+  border-left: 0;
+  color: #757575;
+  font-size: 0.8rem;
+}
+
+.jexcel > thead {
+  background-color: #fff;
+}
+
+.jexcel > thead > tr > td {
+  border-right: 0;
+  border-bottom: 0;
+  background-color: transparent;
+  color: #64AC1E;
+  font-weight: normal;
+  padding: 5px;
+  white-space: normal;
+  flex-grow: 1;
+  word-wrap: break-word;
+}
+
+.jexcel > thead > tr > td.head-water-volume,
+.jexcel > thead > tr > td.head-per-spraying,
+.jexcel > thead > tr > td.head-per-farm,
+.jexcel > thead > tr > td.head-dose-rate {
+  color: #ffffff;
+  background-color: #64AC1E;
+}
+
+.jexcel > tbody > tr, .jexcel > thead > tr {
+  border-left: 0;
+}
+
+.jexcel > tbody > tr > td {
+  padding: 10px;
+  border-right: 0;
+}
+
+.jexcel > tbody > td.edition {
+  padding: 0;
+  /*padding-left: 0;*/
+}
+
+.jexcel > tbody > tr > td:first-child {
+  background-color: #fff;
+  font-weight: bold;
+  color: $color-green;
+}
+
+.jexcel > tbody > tr.selected > td:first-child {
+  background-color: #eee;
+}
+
+.jexcel > thead > tr > td.selected {
+  color: #000000;
+}
+
+/* classic calculator */
+table.classic.jexcel .c7,
+table.classic.jexcel .c8,
+table.classic.jexcel .c9,
+table.classic.jexcel .c10 {
+  background: #64AC1E;
+  color: #FFFFFF;
+}
+table.classic.jexcel .c10,
+table.classic.jexcel > thead > tr > td.head-per-spraying {
+  background: #5c9624;
+}
+
+table.classic.jexcel > tbody > tr > td.c6.readonly,
+table.classic.jexcel > tbody > tr > td.c7.readonly,
+table.classic.jexcel > tbody > tr > td.c8.readonly,
+table.classic.jexcel > tbody > tr > td.c9.readonly,
+table.classic.jexcel > tbody > tr > td.c10.readonly {
+  color: rgba(255, 255, 255, 1);
+}
+
+table.classic.jexcel > tbody > tr > td.c6.readonly.highlight,
+table.classic.jexcel > tbody > tr > td.c7.readonly.highlight,
+table.classic.jexcel > tbody > tr > td.c8.readonly.highlight,
+table.classic.jexcel > tbody > tr > td.c9.readonly.highlight,
+table.classic.jexcel > tbody > tr > td.c10.readonly.highlight {
+  color: rgba(117, 117, 117, 1);
+}
+
+/* leat wall calculator */
+table.leafwall.jexcel .c10,
+table.leafwall.jexcel .c11,
+table.leafwall.jexcel .c12,
+table.leafwall.jexcel .c13 {
+  background: #64AC1E;
+  color: #FFFFFF;
+}
+
+table.leafwall.jexcel .c13,
+table.leafwall.jexcel > thead > tr > td.head-per-spraying {
+  background: #5c9624;
+}
+
+input, textarea, select, button {
+  color: rgba(117, 117, 117, 1);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.jexcel .editor {
+  border: 1px solid rgba(255, 0, 0, .5);
+  background: rgba(202, 206, 206, 0.09);
+  padding-left: 5px;
+  font-size: 0.85rem;
+  font-weight: 300;
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: pink;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: pink;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: pink;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: pink;
+  }
+}
+
+.swich .btn-divider {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Tooltip */
+.cal-header-column + .tooltip > .tooltip-inner {
+  background-color: #73AD21;
+  color: #FFFFFF;
+  border: 1px solid green;
+  padding: 15px;
+  font-size: 20px;
+}
+
+/* Tooltip on top */
+.cal-header-column + .tooltip.top > .tooltip-arrow {
+  border-top: 5px solid green;
+}
+
+/* Tooltip on bottom */
+.cal-header-column + .tooltip.bottom > .tooltip-arrow {
+  border-bottom: 5px solid blue;
+}
+
+/* Tooltip on left */
+.cal-header-column + .tooltip.left > .tooltip-arrow {
+  border-left: 5px solid red;
+}
+
+/* Tooltip on right */
+.cal-header-column + .tooltip.right > .tooltip-arrow {
+  border-right: 5px solid black;
+}
+
+.multiselect-container {
+  position: absolute;
+  list-style-type: none;
+  margin: 0;
+  padding: 0
+}
+
+.multiselect-container .input-group {
+  margin: 5px
+}
+
+.multiselect-container > li {
+  padding: 0
+}
+
+.multiselect-container > li > a.multiselect-all label {
+  font-weight: 700
+}
+
+.multiselect-container > li.multiselect-group label {
+  margin: 0;
+  padding: 3px 20px;
+  height: 100%;
+  font-weight: 700
+}
+
+.multiselect-container > li.multiselect-group-clickable label {
+  cursor: pointer
+}
+
+.multiselect-container > li > a {
+  padding: 0
+}
+
+.multiselect-container > li > a > label {
+  margin: 0;
+  height: 100%;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 3px 20px 3px 40px
+}
+
+.multiselect-container > li > a > label.radio, .multiselect-container > li > a > label.checkbox {
+  margin: 0
+}
+
+.multiselect-container > li > a > label > input[type=checkbox] {
+  margin-bottom: 5px
+}
+
+.filter .btn {
+  padding: 6px 3px
+}
+
+.btn-group > .btn-group:nth-child(2) > .multiselect.btn {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px
+}
+
+.form-inline .multiselect-container label.checkbox, .form-inline .multiselect-container label.radio {
+  padding: 3px 20px 3px 40px
+}
+
+.form-inline .multiselect-container li a label.checkbox input[type=checkbox], .form-inline .multiselect-container li a label.radio input[type=radio] {
+  margin-left: -20px;
+  margin-right: 0
+}
+
+.btn-default {
+  background: #09d926; /* Old browsers */
+  background: -moz-linear-gradient(top, #09d926 1%, #60d95c 18%, #00bf5c 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #09d926), color-stop(18%, #60d95c), color-stop(100%, #00bf5c)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #09d926 1%, #60d95c 18%, #00bf5c 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #09d926 1%, #60d95c 18%, #00bf5c 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #09d926 1%, #60d95c 18%, #00bf5c 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #09d926 1%, #60d95c 18%, #00bf5c 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#09d926', endColorstr='#00bf5c', GradientType=0); /* IE6-9 */
+
+  color: #f9f9f9;
+}
+
+.btn-default:hover {
+  color: #f9f9f9;
+}
+
+.open > .dropdown-toggle.btn-default {
+  color: #f9f9f9;
+  background-color: #09d926;
+  border-color: #00bf5c;
+}
+
+#growth_stage option {
+  color: #004995;
+}
+
+#growth_stage option:disabled {
+  color: #9c9c9c;
+}
+
+/*!
+ * jquery-confirm v3.3.0 (http://craftpip.github.io/jquery-confirm/)
+ * Author: boniface pereira
+ * Website: www.craftpip.com
+ * Contact: hey@craftpip.com
+ *
+ * Copyright 2013-2017 jquery-confirm
+ * Licensed under MIT (https://github.com/craftpip/jquery-confirm/blob/master/LICENSE)
+ */
+@-webkit-keyframes jconfirm-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jconfirm-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+body[class*=jconfirm-no-scroll-] {
+  overflow: hidden !important;
+}
+
+.jconfirm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999999;
+  font-family: inherit;
+  overflow: hidden;
+}
+
+.jconfirm .jconfirm-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: opacity .4s;
+  transition: opacity .4s;
+}
+
+.jconfirm .jconfirm-bg.jconfirm-bg-h {
+  opacity: 0 !important;
+}
+
+.jconfirm .jconfirm-scrollpane {
+  -webkit-perspective: 500px;
+  perspective: 500px;
+  -webkit-perspective-origin: center;
+  perspective-origin: center;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.jconfirm .jconfirm-row {
+  display: table-row;
+  width: 100%;
+}
+
+.jconfirm .jconfirm-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.jconfirm .jconfirm-holder {
+  max-height: 100%;
+  padding: 50px 0;
+}
+
+.jconfirm .jconfirm-box-container {
+  -webkit-transition: -webkit-transform;
+  transition: -webkit-transform;
+  transition: transform;
+  transition: transform, -webkit-transform;
+}
+
+.jconfirm .jconfirm-box-container.jconfirm-no-transition {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.jconfirm .jconfirm-box {
+  border-radius: 0;
+  background: $color-green;
+  position: relative;
+  outline: none;
+  padding: 15px 15px 0;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@-webkit-keyframes type-blue {
+  1%,
+  100% {
+    border-color: #3498db;
+  }
+  50% {
+    border-color: #5faee3;
+  }
+}
+
+@keyframes type-blue {
+  1%,
+  100% {
+    border-color: #3498db;
+  }
+  50% {
+    border-color: #5faee3;
+  }
+}
+
+@-webkit-keyframes type-green {
+  1%,
+  100% {
+    border-color: #2ecc71;
+  }
+  50% {
+    border-color: #54d98c;
+  }
+}
+
+@keyframes type-green {
+  1%,
+  100% {
+    border-color: #2ecc71;
+  }
+  50% {
+    border-color: #54d98c;
+  }
+}
+
+@-webkit-keyframes type-red {
+  1%,
+  100% {
+    border-color: #e74c3c;
+  }
+  50% {
+    border-color: #ed7669;
+  }
+}
+
+@keyframes type-red {
+  1%,
+  100% {
+    border-color: #e74c3c;
+  }
+  50% {
+    border-color: #ed7669;
+  }
+}
+
+@-webkit-keyframes type-orange {
+  1%,
+  100% {
+    border-color: #f1c40f;
+  }
+  50% {
+    border-color: #f4d03f;
+  }
+}
+
+@keyframes type-orange {
+  1%,
+  100% {
+    border-color: #f1c40f;
+  }
+  50% {
+    border-color: #f4d03f;
+  }
+}
+
+@-webkit-keyframes type-purple {
+  1%,
+  100% {
+    border-color: #9b59b6;
+  }
+  50% {
+    border-color: #b07cc6;
+  }
+}
+
+@keyframes type-purple {
+  1%,
+  100% {
+    border-color: #9b59b6;
+  }
+  50% {
+    border-color: #b07cc6;
+  }
+}
+
+@-webkit-keyframes type-dark {
+  1%,
+  100% {
+    border-color: #34495e;
+  }
+  50% {
+    border-color: #46627f;
+  }
+}
+
+@keyframes type-dark {
+  1%,
+  100% {
+    border-color: #34495e;
+  }
+  50% {
+    border-color: #46627f;
+  }
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-blue {
+  border-top: solid 7px #3498db;
+  -webkit-animation-name: type-blue;
+  animation-name: type-blue;
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-green {
+  border-top: solid 7px #2ecc71;
+  -webkit-animation-name: type-green;
+  animation-name: type-green;
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-red {
+  border-top: solid 7px #c50021;
+  -webkit-animation-name: type-red;
+  animation-name: type-red;
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-orange {
+  border-top: solid 7px #f1c40f;
+  -webkit-animation-name: type-orange;
+  animation-name: type-orange;
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-purple {
+  border-top: solid 7px #9b59b6;
+  -webkit-animation-name: type-purple;
+  animation-name: type-purple;
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-dark {
+  border-top: solid 7px #34495e;
+  -webkit-animation-name: type-dark;
+  animation-name: type-dark;
+}
+
+.jconfirm .jconfirm-box.loading {
+  height: 120px;
+}
+
+.jconfirm .jconfirm-box.loading:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  background: white;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.jconfirm .jconfirm-box.loading:after {
+  opacity: 0.6;
+  content: '';
+  height: 30px;
+  width: 30px;
+  border: solid 3px transparent;
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+  border-radius: 50%;
+  -webkit-animation: jconfirm-spin 1s infinite linear;
+  animation: jconfirm-spin 1s infinite linear;
+  border-bottom-color: dodgerblue;
+  top: 50%;
+  margin-top: -15px;
+  z-index: 2;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  opacity: .6;
+  text-align: center;
+  font-size: 27px !important;
+  line-height: 14px !important;
+  display: none;
+  z-index: 1;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon:empty {
+  display: none;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon .fa {
+  font-size: 16px;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon .glyphicon {
+  font-size: 16px;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon .zmdi {
+  font-size: 16px;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon:hover {
+  opacity: 1;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c {
+  display: block;
+  font-size: 22px;
+  line-height: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  padding-bottom: 15px;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c.jconfirm-hand {
+  cursor: move;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c .jconfirm-icon-c {
+  font-size: inherit;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c .jconfirm-icon-c i {
+  vertical-align: middle;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c .jconfirm-icon-c:empty {
+  display: none;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c .jconfirm-title {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: inherit;
+  font-family: inherit;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c .jconfirm-title:empty {
+  display: none;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane {
+  margin-bottom: 15px;
+  height: auto;
+  -webkit-transition: height 0.4s ease-in;
+  transition: height 0.4s ease-in;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane.no-scroll {
+  overflow-y: hidden;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane::-webkit-scrollbar {
+  width: 3px;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 3px;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content {
+  overflow: auto;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content:empty {
+  display: none;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons {
+  padding-bottom: 11px;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons > button {
+  margin-bottom: 4px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 0;
+  min-height: 1em;
+  -webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, background 0.1s ease, -webkit-box-shadow 0.1s ease;
+  //transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, background 0.1s ease, -webkit-box-shadow 0.1s ease;
+  //transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+  transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease, -webkit-box-shadow 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  background-image: none;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-blue {
+  background-color: $color-blue;
+  color: #FFF;
+  text-shadow: none;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-blue:hover {
+  opacity: 0.8
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-green {
+  background-color: $color-green;
+  color: #FFF;
+  text-shadow: none;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-green:hover {
+  opacity: 0.8;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-red {
+  background-color: #c50021;
+  color: #FFF;
+  text-shadow: none;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-red:hover {
+  opacity: 0.8;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-orange {
+  background-color: #f1c40f;
+  color: #FFF;
+  text-shadow: none;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-orange:hover {
+  background-color: #f39c12;
+  color: #FFF;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-default {
+  background-color: #ecf0f1;
+  color: #000;
+  text-shadow: none;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-default:hover {
+  background-color: #bdc3c7;
+  color: #000;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-purple {
+  background-color: #9b59b6;
+  color: #FFF;
+  text-shadow: none;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-purple:hover {
+  background-color: #8e44ad;
+  color: #FFF;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-dark {
+  background-color: #34495e;
+  color: #FFF;
+  text-shadow: none;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons button.btn-dark:hover {
+  background-color: #2c3e50;
+  color: #FFF;
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-red .jconfirm-title-c .jconfirm-icon-c {
+  color:white !important;
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-blue .jconfirm-title-c .jconfirm-icon-c {
+  color: #3498db !important;
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-green .jconfirm-title-c .jconfirm-icon-c {
+  color: #2ecc71 !important;
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-purple .jconfirm-title-c .jconfirm-icon-c {
+  color: #9b59b6 !important;
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-orange .jconfirm-title-c .jconfirm-icon-c {
+  color: #f1c40f !important;
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-dark .jconfirm-title-c .jconfirm-icon-c {
+  color: #34495e !important;
+}
+
+.jconfirm .jconfirm-clear {
+  clear: both;
+}
+
+.jconfirm.jconfirm-rtl {
+  direction: rtl;
+}
+
+.jconfirm.jconfirm-rtl div.jconfirm-closeIcon {
+  left: 5px;
+  right: auto;
+}
+
+.jconfirm.jconfirm-white .jconfirm-bg,
+.jconfirm.jconfirm-light .jconfirm-bg {
+  background-color: #444;
+  opacity: .2;
+}
+
+.jconfirm.jconfirm-white .jconfirm-box,
+.jconfirm.jconfirm-light .jconfirm-box {
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.jconfirm.jconfirm-white .jconfirm-box .jconfirm-title-c .jconfirm-icon-c,
+.jconfirm.jconfirm-light .jconfirm-box .jconfirm-title-c .jconfirm-icon-c {
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+.jconfirm.jconfirm-white .jconfirm-box .jconfirm-buttons,
+.jconfirm.jconfirm-light .jconfirm-box .jconfirm-buttons {
+  float: right;
+}
+
+.jconfirm.jconfirm-white .jconfirm-box .jconfirm-buttons button,
+.jconfirm.jconfirm-light .jconfirm-box .jconfirm-buttons button {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.jconfirm.jconfirm-white .jconfirm-box .jconfirm-buttons button.btn-default,
+.jconfirm.jconfirm-light .jconfirm-box .jconfirm-buttons button.btn-default {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #333;
+}
+
+.jconfirm.jconfirm-white .jconfirm-box .jconfirm-buttons button.btn-default:hover,
+.jconfirm.jconfirm-light .jconfirm-box .jconfirm-buttons button.btn-default:hover {
+  background: #ddd;
+}
+
+.jconfirm.jconfirm-white.jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c,
+.jconfirm.jconfirm-light.jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+.jconfirm.jconfirm-black .jconfirm-bg,
+.jconfirm.jconfirm-dark .jconfirm-bg {
+  background-color: darkslategray;
+  opacity: .4;
+}
+
+.jconfirm.jconfirm-black .jconfirm-box,
+.jconfirm.jconfirm-dark .jconfirm-box {
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background: #444;
+  border-radius: 5px;
+  color: white;
+}
+
+.jconfirm.jconfirm-black .jconfirm-box .jconfirm-title-c .jconfirm-icon-c,
+.jconfirm.jconfirm-dark .jconfirm-box .jconfirm-title-c .jconfirm-icon-c {
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+.jconfirm.jconfirm-black .jconfirm-box .jconfirm-buttons,
+.jconfirm.jconfirm-dark .jconfirm-box .jconfirm-buttons {
+  float: right;
+}
+
+.jconfirm.jconfirm-black .jconfirm-box .jconfirm-buttons button,
+.jconfirm.jconfirm-dark .jconfirm-box .jconfirm-buttons button {
+  border: none;
+  background-image: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: none;
+  -webkit-transition: background .1s;
+  transition: background .1s;
+  color: white;
+}
+
+.jconfirm.jconfirm-black .jconfirm-box .jconfirm-buttons button.btn-default,
+.jconfirm.jconfirm-dark .jconfirm-box .jconfirm-buttons button.btn-default {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #fff;
+  background: none;
+}
+
+.jconfirm.jconfirm-black .jconfirm-box .jconfirm-buttons button.btn-default:hover,
+.jconfirm.jconfirm-dark .jconfirm-box .jconfirm-buttons button.btn-default:hover {
+  background: #666;
+}
+
+.jconfirm.jconfirm-black.jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c,
+.jconfirm.jconfirm-dark.jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+.jconfirm .jconfirm-box.hilight.jconfirm-hilight-shake {
+  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.jconfirm .jconfirm-box.hilight.jconfirm-hilight-glow {
+  -webkit-animation: glow 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation: glow 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+@-webkit-keyframes shake {
+  10%,
+  90% {
+    -webkit-transform: translate3d(-2px, 0, 0);
+    transform: translate3d(-2px, 0, 0);
+  }
+  20%,
+  80% {
+    -webkit-transform: translate3d(4px, 0, 0);
+    transform: translate3d(4px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translate3d(-8px, 0, 0);
+    transform: translate3d(-8px, 0, 0);
+  }
+  40%,
+  60% {
+    -webkit-transform: translate3d(8px, 0, 0);
+    transform: translate3d(8px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    -webkit-transform: translate3d(-2px, 0, 0);
+    transform: translate3d(-2px, 0, 0);
+  }
+  20%,
+  80% {
+    -webkit-transform: translate3d(4px, 0, 0);
+    transform: translate3d(4px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translate3d(-8px, 0, 0);
+    transform: translate3d(-8px, 0, 0);
+  }
+  40%,
+  60% {
+    -webkit-transform: translate3d(8px, 0, 0);
+    transform: translate3d(8px, 0, 0);
+  }
+}
+
+@-webkit-keyframes glow {
+  0%,
+  100% {
+    -webkit-box-shadow: 0 0 0 red;
+    box-shadow: 0 0 0 red;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 30px red;
+    box-shadow: 0 0 30px red;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    -webkit-box-shadow: 0 0 0 red;
+    box-shadow: 0 0 0 red;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 30px red;
+    box-shadow: 0 0 30px red;
+  }
+}
+
+/*Transition rules*/
+.jconfirm {
+  -webkit-perspective: 400px;
+  perspective: 400px;
+}
+
+.jconfirm .jconfirm-box {
+  opacity: 1;
+  -webkit-transition-property: all;
+  transition-property: all;
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-top,
+.jconfirm .jconfirm-box.jconfirm-animation-left,
+.jconfirm .jconfirm-box.jconfirm-animation-right,
+.jconfirm .jconfirm-box.jconfirm-animation-bottom,
+.jconfirm .jconfirm-box.jconfirm-animation-opacity,
+.jconfirm .jconfirm-box.jconfirm-animation-zoom,
+.jconfirm .jconfirm-box.jconfirm-animation-scale,
+.jconfirm .jconfirm-box.jconfirm-animation-none,
+.jconfirm .jconfirm-box.jconfirm-animation-rotate,
+.jconfirm .jconfirm-box.jconfirm-animation-rotatex,
+.jconfirm .jconfirm-box.jconfirm-animation-rotatey,
+.jconfirm .jconfirm-box.jconfirm-animation-scaley,
+.jconfirm .jconfirm-box.jconfirm-animation-scalex {
+  opacity: 0;
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-rotate {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-rotatex {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-rotatexr {
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-rotatey {
+  -webkit-transform: rotatey(90deg);
+  transform: rotatey(90deg);
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-rotateyr {
+  -webkit-transform: rotatey(-90deg);
+  transform: rotatey(-90deg);
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-scaley {
+  -webkit-transform: scaley(1.5);
+  transform: scaley(1.5);
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-scalex {
+  -webkit-transform: scalex(1.5);
+  transform: scalex(1.5);
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-top {
+  -webkit-transform: translate(0px, -100px);
+  transform: translate(0px, -100px);
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-left {
+  -webkit-transform: translate(-100px, 0px);
+  transform: translate(-100px, 0px);
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-right {
+  -webkit-transform: translate(100px, 0px);
+  transform: translate(100px, 0px);
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-bottom {
+  -webkit-transform: translate(0px, 100px);
+  transform: translate(0px, 100px);
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-zoom {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-scale {
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-none {
+  visibility: hidden;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-bg {
+  background-color: rgba(54, 70, 93, 0.95);
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box {
+  background-color: transparent;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box.jconfirm-type-blue {
+  border: none;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box.jconfirm-type-green {
+  border: none;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box.jconfirm-type-red {
+  border: none;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box.jconfirm-type-orange {
+  border: none;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box.jconfirm-type-purple {
+  border: none;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box.jconfirm-type-dark {
+  border: none;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box div.jconfirm-closeIcon {
+  color: white;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box div.jconfirm-title-c {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box div.jconfirm-title-c > * {
+  padding-bottom: 25px;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box div.jconfirm-title-c .jconfirm-icon-c {
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box div.jconfirm-content-pane {
+  margin-bottom: 25px;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box div.jconfirm-content {
+  text-align: center;
+  color: white;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box .jconfirm-buttons {
+  text-align: center;
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box .jconfirm-buttons button {
+  font-size: 16px;
+  border-radius: 2px;
+  background: #303f53;
+  text-shadow: none;
+  border: none;
+  color: white;
+  padding: 10px;
+  min-width: 100px;
+}
+
+.jconfirm.jconfirm-supervan.jconfirm-rtl .jconfirm-box div.jconfirm-title-c .jconfirm-icon-c {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+.jconfirm.jconfirm-material .jconfirm-bg {
+  background-color: rgba(0, 0, 0, 0.67);
+}
+
+.jconfirm.jconfirm-material .jconfirm-box {
+  background-color: white;
+  -webkit-box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);
+  padding: 30px 25px 10px 25px;
+}
+
+.jconfirm.jconfirm-material .jconfirm-box .jconfirm-title-c .jconfirm-icon-c {
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+.jconfirm.jconfirm-material .jconfirm-box div.jconfirm-closeIcon {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.jconfirm.jconfirm-material .jconfirm-box div.jconfirm-title-c {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.jconfirm.jconfirm-material .jconfirm-box div.jconfirm-content {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.jconfirm.jconfirm-material .jconfirm-box .jconfirm-buttons {
+  text-align: right;
+}
+
+.jconfirm.jconfirm-material .jconfirm-box .jconfirm-buttons button {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.jconfirm.jconfirm-material.jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+.jconfirm.jconfirm-bootstrap .jconfirm-bg {
+  background-color: rgba(0, 0, 0, 0.21);
+}
+
+.jconfirm.jconfirm-bootstrap .jconfirm-box {
+  background-color: white;
+  -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+  border: solid 1px rgba(0, 0, 0, 0.4);
+  padding: 15px 0 0;
+}
+
+.jconfirm.jconfirm-bootstrap .jconfirm-box .jconfirm-title-c .jconfirm-icon-c {
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+.jconfirm.jconfirm-bootstrap .jconfirm-box div.jconfirm-closeIcon {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.jconfirm.jconfirm-bootstrap .jconfirm-box div.jconfirm-title-c {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 22px;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.jconfirm.jconfirm-bootstrap .jconfirm-box div.jconfirm-content {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 0 15px;
+}
+
+.jconfirm.jconfirm-bootstrap .jconfirm-box .jconfirm-buttons {
+  text-align: right;
+  padding: 10px;
+  margin: -5px 0 0px;
+  border-top: solid 1px #ddd;
+  overflow: hidden;
+  border-radius: 0 0 4px 4px;
+}
+
+.jconfirm.jconfirm-bootstrap .jconfirm-box .jconfirm-buttons button {
+  font-weight: 500;
+}
+
+.jconfirm.jconfirm-bootstrap.jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-bg {
+  background-color: slategray;
+  opacity: .6;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-box {
+  background-color: $color-green;
+  padding: 30px 30px 15px;
+  color: white;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-box div.jconfirm-closeIcon {
+  color: rgba(0, 0, 0, 0.87);
+  top: 15px;
+  right: 15px;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-box div.jconfirm-title-c {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-box div.jconfirm-title-c .jconfirm-icon-c {
+  -webkit-transition: -webkit-transform .5s;
+  //transition: -webkit-transform .5s;
+  //transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  display: block;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 10px;
+  font-size: 69px;
+  color: white;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-box div.jconfirm-content {
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  margin-bottom: 25px;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-box .jconfirm-buttons {
+  text-align: center;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-box .jconfirm-buttons button {
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-transition: background .1s;
+  transition: background .1s;
+  padding: 10px 20px;
+}
+.jconfirm.jconfirm-modern .jconfirm-box .jconfirm-buttons button.btn-default {
+  padding: 9px 19px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  box-shadow: none;
+  &:hover, &:focus {
+    background: rgba(255,255,255,0.2);
+  }
+}
+
+.jconfirm.jconfirm-modern .jconfirm-box .jconfirm-buttons button + button {
+  margin-left: 14px;
+}
+
+.jconfirm.jconfirm-modern.jconfirm-open .jconfirm-box .jconfirm-title-c .jconfirm-icon-c {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+input[type="text"].jcalendar_spraying_date {
+  position: relative;
+  border: 1px solid rgba(100, 172, 30, 0.5);
+  height: 35px;
+  background-color: #fff;
+  border-radius: 0;
+  margin: 0;
+  width: 100%;
+  &:hover, &:focus, &:active {
+    box-shadow: 0 0 2px rgba(0, 73, 149, 0.5) !important;
+    border-color: rgba(0, 73, 149, 0.5) !important;
+  }
+}
+
+.SumoSelect p {
+  margin: 0;
+}
+
+.SumoSelect {
+  width: 100%;
+  max-width: 100%;
+}
+
+.SelectBox {
+  padding: 5px 8px;
+}
+
+.sumoStopScroll {
+  overflow: hidden;
+}
+
+/* Filtering style */
+.SumoSelect .hidden {
+  display: none;
+}
+
+.SumoSelect .search-txt {
+  display: none;
+  outline: none;
+}
+
+.SumoSelect .no-match {
+  display: none;
+  padding: 6px;
+}
+
+.SumoSelect.open .search-txt {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 5px 8px;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.SumoSelect.open > .search > span,
+.SumoSelect.open > .search > label {
+  visibility: hidden;
+}
+
+/*this is applied on that hidden select. DO NOT USE display:none; or visiblity:hidden; and Do not override any of these properties. */
+.SelectClass, .SumoUnder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+}
+
+.SelectClass {
+  z-index: 1;
+}
+
+.SumoSelect > .optWrapper > .options li.opt label,
+.SumoSelect > .CaptionCont, .SumoSelect .select-all > label {
+  user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+.SumoSelect {
+  display: inline-block;
+  position: relative;
+  outline: none;
+}
+
+.SumoSelect:focus > .CaptionCont,
+.SumoSelect:hover > .CaptionCont,
+.SumoSelect.open > .CaptionCont {
+  box-shadow: 0 0 2px rgba(0,73,149,0.5);
+  border-color: rgba(0,73,149,0.5);
+}
+
+.SumoSelect > .CaptionCont {
+  position: relative;
+  border: 1px solid rgba(100,172,30,0.5);
+  min-height: 14px;
+  background-color: #fff;
+  border-radius: 0;
+  margin: 0;
+}
+
+.SumoSelect > .CaptionCont > span {
+  display: block;
+  padding-right: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: default;
+}
+
+/*placeholder style*/
+.SumoSelect > .CaptionCont > span.placeholder {
+  color: #ccc;
+  font-style: italic;
+}
+
+.SumoSelect > .CaptionCont > label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30px;
+}
+
+.SumoSelect > .CaptionCont > label > i {
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  border-left: 2px solid $color-green;
+  border-bottom: 2px solid $color-green;
+  transform: rotate(-45deg)
+}
+
+.SumoSelect > .CaptionCont:focus > label > i,
+.SumoSelect > .CaptionCont:hover > label > i {
+  opacity: 1;
+  border-left: 2px solid $color-blue;
+  border-bottom: 2px solid $color-blue;
+}
+
+.SumoSelect > .optWrapper {
+  display: none;
+  z-index: 1000;
+  top: 30px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.11);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.SumoSelect.open > .optWrapper {
+  top: 35px;
+  display: block;
+}
+
+.SumoSelect.open > .optWrapper.up {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 5px;
+}
+
+.SumoSelect > .optWrapper ul {
+  list-style: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+.SumoSelect > .optWrapper > .options {
+  border-radius: 2px;
+  position: relative;
+  /*Set the height of pop up here (only for desktop mode)*/
+  max-height: 250px;
+  /*height*/
+}
+
+.SumoSelect > .optWrapper.okCancelInMulti > .options {
+  border-radius: 2px 2px 0 0;
+}
+
+.SumoSelect > .optWrapper.selall > .options {
+  border-radius: 0 0 2px 2px;
+}
+
+.SumoSelect > .optWrapper.selall.okCancelInMulti > .options {
+  border-radius: 0;
+}
+
+.SumoSelect > .optWrapper > .options li.group.disabled > label {
+  opacity: 0.5;
+}
+
+.SumoSelect > .optWrapper > .options li ul li.opt {
+  padding-left: 22px;
+}
+
+.SumoSelect > .optWrapper.multiple > .options li ul li.opt {
+  padding-left: 50px;
+}
+
+.SumoSelect > .optWrapper.isFloating > .options {
+  max-height: 100%;
+  box-shadow: 0 0 100px #595959;
+}
+
+.SumoSelect > .optWrapper > .options li.opt {
+  padding: 6px 6px;
+  position: relative;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.SumoSelect > .optWrapper > .options > li.opt:first-child {
+  border-radius: 2px 2px 0 0;
+}
+
+.SumoSelect > .optWrapper.selall > .options > li.opt:first-child {
+  border-radius: 0;
+}
+
+.SumoSelect > .optWrapper > .options > li.opt:last-child {
+  border-radius: 0 0 2px 2px;
+  border-bottom: none;
+}
+
+.SumoSelect > .optWrapper.okCancelInMulti > .options > li.opt:last-child {
+  border-radius: 0;
+}
+
+.SumoSelect > .optWrapper > .options li.opt:hover {
+  background-color: #E4E4E4;
+}
+
+.SumoSelect > .optWrapper > .options li.opt.sel, .SumoSelect .select-all.sel {
+  background-color: #a1c0e4;
+}
+
+.SumoSelect > .optWrapper > .options li label {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
+}
+
+.SumoSelect > .optWrapper > .options li span {
+  display: none;
+}
+
+.SumoSelect > .optWrapper > .options li.group > label {
+  cursor: default;
+  padding: 8px 6px;
+  font-weight: bold;
+}
+
+/*Floating styles*/
+.SumoSelect > .optWrapper.isFloating {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 90%;
+  bottom: 0;
+  margin: auto;
+  max-height: 90%;
+}
+
+/*disabled state*/
+.SumoSelect > .optWrapper > .options li.opt.disabled {
+  background-color: inherit;
+  pointer-events: none;
+}
+
+.SumoSelect > .optWrapper > .options li.opt.disabled * {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 5-7 */
+  filter: alpha(opacity=50); /* Netscape */
+  -moz-opacity: 0.5; /* Safari 1.x */
+  -khtml-opacity: 0.5; /* Good browsers */
+  opacity: 0.5;
+}
+
+
+/*styling for multiple select*/
+.SumoSelect > .optWrapper.multiple > .options li.opt {
+  padding-left: 35px;
+  cursor: pointer;
+}
+
+.SumoSelect > .optWrapper.multiple > .options li.opt span,
+.SumoSelect .select-all > span {
+  position: absolute;
+  display: block;
+  width: 30px;
+  top: 0;
+  bottom: 0;
+  margin-left: -7px;
+}
+
+.SumoSelect > .optWrapper.multiple > .options li.opt span i,
+.SumoSelect .select-all > span i {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #AEAEAE;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+
+.SumoSelect > .optWrapper > .MultiControls {
+  display: none;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.13);
+  border-radius: 0 0 3px 3px;
+}
+
+.SumoSelect > .optWrapper.multiple.isFloating > .MultiControls {
+  display: block;
+  margin-top: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.SumoSelect > .optWrapper.multiple.okCancelInMulti > .MultiControls {
+  display: block;
+}
+
+.SumoSelect > .optWrapper.multiple.okCancelInMulti > .MultiControls > p {
+  padding: 6px;
+}
+
+.SumoSelect > .optWrapper.multiple.okCancelInMulti > .MultiControls > p:focus {
+  box-shadow: 0 0 2px #a1c0e4;
+  border-color: #a1c0e4;
+  outline: none;
+  background-color: #a1c0e4;
+}
+
+.SumoSelect > .optWrapper.multiple > .MultiControls > p {
+  display: inline-block;
+  cursor: pointer;
+  padding: 12px;
+  width: 50%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.SumoSelect > .optWrapper.multiple > .MultiControls > p:hover {
+  background-color: #f1f1f1;
+}
+
+.SumoSelect > .optWrapper.multiple > .MultiControls > p.btnOk {
+  border-right: 1px solid #DBDBDB;
+  border-radius: 0 0 0 3px;
+}
+
+.SumoSelect > .optWrapper.multiple > .MultiControls > p.btnCancel {
+  border-radius: 0 0 3px 0;
+}
+
+/*styling for select on popup mode*/
+.SumoSelect > .optWrapper.isFloating > .options li.opt {
+  padding: 12px 6px;
+}
+
+/*styling for only multiple select on popup mode*/
+.SumoSelect > .optWrapper.multiple.isFloating > .options li.opt {
+  padding-left: 35px;
+}
+
+.SumoSelect > .optWrapper.multiple.isFloating {
+  padding-bottom: 43px;
+}
+
+.SumoSelect > .optWrapper.multiple > .options li.opt.selected span i,
+.SumoSelect .select-all.selected > span i,
+.SumoSelect .select-all.partial > span i {
+  background-color: rgb(17, 169, 17);
+  box-shadow: none;
+  border-color: transparent;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAABMSURBVAiZfc0xDkAAFIPhd2Kr1WRjcAExuIgzGUTIZ/AkImjSofnbNBAfHvzAHjOKNzhiQ42IDFXCDivaaxAJd0xYshT3QqBxqnxeHvhunpu23xnmAAAAAElFTkSuQmCC');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/*disabled state*/
+.SumoSelect.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.SumoSelect.disabled > .CaptionCont {
+  border-color: #ccc;
+  box-shadow: none;
+}
+
+/**Select all button**/
+.SumoSelect .select-all {
+  border-radius: 3px 3px 0 0;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  padding: 8px 0 3px 35px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.SumoSelect .select-all > label, .SumoSelect .select-all > span i {
+  cursor: pointer;
+}
+
+.SumoSelect .select-all.partial > span i {
+  background-color: #ccc;
+}
+
+/*styling for optgroups*/
+.SumoSelect > .optWrapper > .options li.optGroup {
+  padding-left: 5px;
+  text-decoration: underline;
+}
+
+#final_result {
+  .jexcel > thead > tr > td,
+  .jexcel > tbody > tr > td,
+  .jexcel > thead > tr > td:last-child,
+  .jexcel > tbody > tr > td:last-child,
+  .jexcel > tbody > tr:first-child > td:last-child{
+    background: $color-green;
+    color: white;
+    border-bottom: 1px solid white;
+    border-top: 0;
+  }
+
+  .jexcel > tbody > tr:first-child > td,
+  .jexcel > tbody > tr:first-child > td:last-child {
+    border-top: 1px solid white;
+  }
+
+  h3 {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  textarea {
+    background: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 6rem;
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+  }
+
+  #wpexperts_pdf_generate_file,
+  .reloadCalculation,
+  .generate-spraying-plan {
+    background: $color-blue;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: all 0.2s;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      background: $color-green;
+      text-decoration: none;
+    }
+  }
+
+  #wpexperts_pdf_generate_file,
+  .generate-spraying-plan {
+    background: $color-green;
+    margin-top: 0.5rem;
+    &:hover {
+      background: $color-blue;
+    }
+  }
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+#show-calculation-form,
+#hidden-calculation-form {
+  background: $color-blue;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: all 0.2s;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+  &:hover {
+    background: $color-green;
+    text-decoration: none;
+  }
+}
+
+.jconfirm-content .form-group > label {
+  width: auto;
+}

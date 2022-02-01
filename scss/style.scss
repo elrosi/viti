@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/*
+ Theme Name:    OnePress Child
+ Theme URI:     https://www.famethemes.com/themes/onepress/
+ Description:   Twenty Fifteen Child Theme
+ Author:        NetSuccess s.r.o.
+ Author URI:    https://netsuccess.sk
+ Template:      onepress
+ Version:       1.0.0
+ License:       GNU General Public License v2 or later
+ License URI:   http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:          one-column, two-columns, left-sidebar, right-sidebar, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce, blog, portfolio
+ Text Domain:   onepress
+*/
+
+/*
+* Colors
+ */
+
+$color-green: #64AC1E;
+$color-blue: #004995;
+$color-white: #FFFFFF;
+
+// aliases
+$color-main: $color-green;
+$color-sub: $color-blue;
+
+/*
+* Responsive Breakpoint
+ */
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1120px;
+
+/* import default parent styles */
+@import "mixin";
+@import "flaticon";
+@import "base";
+@import "forms";
+@import "toastr";
+@import "footer";
+@import "login";
+@import "profile";
+@import "faq_contact";
+
+@import "wfml";
+
+@import "js_simplebar";
+
+@import "dashboard/vineyard_and_device";
+@import "dashboard/banner";
+
+@import "products/single";
+@import "products/archive";
+@import "tripsy";
+@import "calculator";
+
+/* #content {
+    border: 1px solid #e9e9e9;
+    background: #fbfbfb;
+} */
+
+/* -- HEADER -- */
+
+.site-header {
+    line-height: 20px;
+}
+
+.site-logo-div {
+    width: 150px;
+}
+
+/* -- NAVIGATION MENU -- */
+.onepress-menu > li.current-menu-item > a {
+    color: #004995 !important;
+}
+
+/* Remove */
+.onepage-section:before{
+    display: none;
+}
+
+.um-register {
+    .um-field-newsletter {
+        .um-field-half {
+            width: 100% !important;
+        }
+    }
+}

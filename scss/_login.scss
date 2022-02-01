@@ -1,0 +1,293 @@
+/*-- LOGIN PAGE -- */
+.um-page-login #page {
+    background: #65ac1e;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 575.99px) {
+  .um-page-login #content,
+  .um-page-login #content-inside {
+    width: 100%;
+  }
+}
+
+.um-page-login #content {
+  margin-top: auto;
+}
+
+.um-page-login #content::after {
+  display: none;
+}
+
+.um-page-login #primary {
+  margin: 0;
+  padding: 0;
+}
+
+.um-page-login .entry-header {
+  height: auto;
+  margin: 0;
+}
+
+.um-page-login .entry-header .entry-title,
+.um-page-login .entry-header .entry-subtitle {
+  display: none;
+}
+
+/* content height min. na celu obrazovku */
+.um-page-login .entry-header .attachment-post-thumbnail {
+  min-height: calc(100vh - 100px) !important;
+}
+
+.um-page-login .admin-bar .entry-header .attachment-post-thumbnail {
+  min-height: calc(100vh - 146px) !important;
+}
+
+.um-page-login .entry-header .attachment-post-thumbnail {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .um-page-login .entry-header .attachment-post-thumbnail {
+    height: calc(100vh - 60px) !important;
+  }
+  .um-page-login .admin-bar .entry-header .attachment-post-thumbnail {
+    height: calc(100vh - 92px) !important;
+  }
+
+  .um-page-login .entry-header .attachment-post-thumbnail {
+    position: absolute;
+    top: 0; right: 0;
+    width: 50vw;
+  }
+}
+
+@media (min-width: 992px) {
+  .um-page-login .login-form,
+  .um-page-login .entry-header .attachment-post-thumbnail {
+    width: 50%;
+    object-fit: cover;
+    left: auto;
+    display: block;
+  }
+}
+
+.um-page-login .entry-content {
+  padding-top: 30px;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  .um-page-login .entry-content {
+    margin: 0;
+  }
+}
+
+.um-page-login .login-form {
+  max-width: 380px;
+  width: 100%;
+  margin-left: 15px;
+}
+
+.um-page-login .login-logo {
+  margin-bottom: 3rem;
+
+}
+
+.um-page-login #page .um span.um-req {
+    color: #64AC1E;
+}
+
+.um-page-login .um-form .um-field-label label {
+  color: white;
+}
+
+
+.um-page-login .um-col-alt {
+  width: 45%;
+  float: left;
+  margin-right: 10%;
+}
+
+.um-page-login .um-col-alt .um-half {
+  width: 100%;
+  float: none;
+}
+
+.um-page-login .um a.um-link-alt {
+  color: white !important;
+  transition: all 0.2s;
+  float: right;
+  line-height: 35px;
+}
+
+.um-page-login .um a.um-link-alt:hover {
+  color: #004995 !important;
+}
+
+.um-page-login .um a.um-link-alt::after {
+  display: block;
+  content: "";
+  clear: both;
+  margin-bottom: 2rem;
+}
+
+#page .um a.um-button.um-alt {
+  background: transparent;
+  text-align: left;
+  margin-top: 2rem;
+  padding-left: 2.5rem !important;
+  text-decoration: underline !important;
+  transition: all 0.2s;
+}
+
+#page .um a.um-button.um-alt:hover,
+#page .um a.um-button.um-alt:hover::before {
+  color: #004995 !important;
+}
+
+.um-page-login .um-field-username label,
+.um-page-login .um-field-user_password label{
+  padding-left: 2.5rem;
+}
+
+.um-page-login .um-button.um-alt::before,
+.um-page-login .um-field-username::before,
+.um-page-login .um-field-user_password::before {
+  content: "\63";
+  position: absolute;
+  font-family: flaticon;
+  transition: all 0.2s;
+  color: white;
+  font-size: 1.35rem;
+  margin-top: -0.45rem;
+  margin-left: 5px;
+}
+
+.um-page-login .um-field-user_password::before {
+  content: "\65";
+}
+
+.um-page-login .um-button.um-alt::before {
+  content: "\62";
+}
+
+.um-page-login .um-button.um-alt::before {
+  margin-top: 0;
+  margin-left: calc(5px - 2.5rem);
+}
+
+
+@media (max-width: 380px) {
+  .um-page-login .um-col-alt {
+    float: none;
+    position: absolute;
+    margin-top: 3rem;
+    width: 200px;
+  }
+  .um-page-login .um a.um-link-alt {
+    position: relative;
+    margin-top: -1.25rem;
+    height: 11rem;
+  }
+  #page .um a.um-button.um-alt {
+    margin-top:0.5rem;
+  }
+
+  .um-page-login .um a.um-link-alt {
+    xfloat: none;
+  }
+}
+
+.um-page-login ul {
+  display: none;
+}
+
+@media (min-width: 992px) and (min-height: 820px) {
+  .um-page-login ul {
+    display: block;
+    position: fixed;
+    bottom: 70px;
+    width: 380px;
+    padding: 0;
+  }
+  .um-page-login #main ul li {
+    list-style: none;
+    padding: 0;
+    &:before {
+      display: none;
+    }
+  }
+  .um-page-login li a {
+    color: white;
+    display: block;
+    float: left;
+    border: 1px solid white;
+    padding: 0.8rem 0.8rem;
+    margin-right: 1.8rem;
+  }
+}
+
+
+/* password reset */
+.um-password div {
+  text-align: left !important;
+}
+
+.um-password .um-field-block .um-field-block {
+  color: #64AC1E;
+  font-weight: bold;
+  line-height: 1.4rem;
+}
+
+.um-password .um-field {
+  padding: 1.5rem 0 0;
+}
+
+.um-page-password-reset #main .entry-content ul {
+  display: flex;
+  width: 100%;
+  max-width: 450px;
+  padding: 0;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.um-page-password-reset #main .entry-content li {
+  list-style: none;
+  padding: 0;
+  &:before {
+    display: none;
+  }
+}
+.um-page-password-reset .entry-content li a {
+  color: #64AC1E;
+  display: block;
+  float: left;
+  text-decoration: underline;
+  margin-left: 1.8rem;
+  transition: all 0.2s;
+}
+
+.um-page-password-reset .entry-content li a::before {
+  content: "\63";
+  position: absolute;
+  font-family: flaticon;
+  transition: all 0.2s;
+  font-size: 1.35rem;
+  margin-top: -0.45rem;
+  margin-left: -1.8rem;
+  transition: all 0.2s;
+}
+
+.um-page-password-reset .entry-content li a[href$="register/"]::before {
+  content: "\62";
+}
+
+
+.um-page-password-reset .entry-content li a:hover,
+.um-page-password-reset .entry-content li a:hover::before {
+  color: #004995 !important;
+}

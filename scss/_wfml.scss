@@ -1,0 +1,23 @@
+.mfp-figure {
+  background: white;
+}
+
+body {
+  .mfp-image-holder .mfp-close,
+  .mfp-iframe-holder .mfp-close {
+    right: auto;
+    padding-right: 0;
+  }
+
+  .mfp-iframe-scaler iframe {
+    background: black url('assets/images/loading.gif') no-repeat center center;
+  }
+}
+
+
+.mfp-inline-holder .mfp-content {
+    width: 100%;
+    max-width: 900px;
+    background: #64AC1E;
+    padding: 30px;
+}
